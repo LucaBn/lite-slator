@@ -49,4 +49,8 @@ Same examples are also provided in `index.js` file
 
 ## Pro tip
 
-If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 176 bytes version of this library <i>SIIIIIIUUUUUUUUM</i>
+If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 235 bytes version of this library.
+
+Just remember to import the correct json file.
+
+<i>SIIIIIIUUUUUUUUM</i>
