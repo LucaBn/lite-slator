@@ -14,33 +14,42 @@ Add json files containing localized strings.
 
 Use `t()` function to get your translation by passing a string key and its optional variables.
 
-Examples:
+Examples supposing `lang/en-GB.json` file is used as dictionary:
 
 ```js
+/* Pass a key string */
 t("basic-test");
-// Basic test
+// Output: Basic test
 ```
 
 ```js
-/* Note that if you have only one variable you can pass an object */
+/* Pass one variable */
 t("test-with-variable", { name: "Luca" });
-// My name is Luca
+// Output: My name is Luca
 ```
 
 ```js
-/* Note that if you have more than one variable you have to pass an array of objects */
+/* Pass an array of variables */
 t("test-with-variables", [{ firstName: "Mario" }, { lastName: "Rossi" }]);
-// My full name is Mario Rossi
+// Output: My full name is Mario Rossi
 ```
 
 ```js
+/* Pass n variables */
+t("test-with-variables", { firstName: "Mario" }, { lastName: "Rossi" });
+// Output: My full name is Mario Rossi
+```
+
+```js
+/* Pass a nested key string, dot character is the separator */
 t("parent-level.child-level");
-// Second level
+// Output: Second level
 ```
 
 ```js
+/* Pass a nested key string and one variable */
 t("parent-level.child-level-with-variable", { year: "1990" });
-// I was born in 1990
+// Output: I was born in 1990
 ```
 
 Same examples are also provided in `index.js` file
@@ -49,7 +58,7 @@ Same examples are also provided in `index.js` file
 
 ## Pro tip
 
-If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 235 bytes version of this library.
+If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 206 bytes version of this library.
 
 Just remember to import the correct json file.
 
