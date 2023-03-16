@@ -8,35 +8,54 @@ It's like i18n but worst!
 
 ## How to use
 
-Import index.js script in your project.
+Import `index.js` script in your project.
 
-Add json files containing localized strings.
+Import your localized json object and assign it to `currentLanguageDictionary` variable.
 
 Use `t()` function to get your translation by passing a string key and its optional variables.
 
-Examples supposing `lang/en-GB.json` file is used as dictionary:
+Examples:
+
+```js
+/* This is my current dictionary */
+const currentLanguageDictionary = {
+  "simple-string": "Simple string",
+  "string-with-variable": "My name is ${name}",
+  "string-with-variables": "My full name is ${firstName} ${lastName}",
+  "parent-level": {
+    "child-level": "Second level",
+    "child-level-with-variable": "I was born in ${year}",
+  },
+};
+```
 
 ```js
 /* Pass a key string */
-t("basic-test");
-// Output: Basic test
+t("simple-string");
+// Output: Simple string
 ```
 
 ```js
 /* Pass one variable */
-t("test-with-variable", { name: "Luca" });
+t("string-with-variable", { name: "Luca" });
 // Output: My name is Luca
 ```
 
 ```js
 /* Pass an array of variables */
-t("test-with-variables", [{ firstName: "Mario" }, { lastName: "Rossi" }]);
+t("string-with-variables", [{ firstName: "Mario" }, { lastName: "Rossi" }]);
 // Output: My full name is Mario Rossi
 ```
 
 ```js
 /* Pass n variables */
-t("test-with-variables", { firstName: "Mario" }, { lastName: "Rossi" });
+t("string-with-variables", { firstName: "Mario" }, { lastName: "Rossi" });
+// Output: My full name is Mario Rossi
+```
+
+```js
+/* Pass one object with multiple properties as variable */
+t("string-with-variables", { firstName: "Mario", lastName: "Rossi" });
 // Output: My full name is Mario Rossi
 ```
 
@@ -58,8 +77,6 @@ Same examples are also provided in `index.js` file
 
 ## Pro tip
 
-If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 206 bytes version of this library.
-
-Just remember to import the correct json file.
+If you are cool include the `index.min.js` file in your project and leave your coworkers astonished with the 185 bytes version of this library.
 
 <i>SIIIIIIUUUUUUUUM</i>

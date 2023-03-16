@@ -1,9 +1,0 @@
-{
-  "basic-test": "Test de base",
-  "test-with-variable": "Je m'appelle ${name}",
-  "test-with-variables": "Mon nom complet est ${firstName} ${lastName}",
-  "parent-level": {
-    "child-level": "Deuxième niveau",
-    "child-level-with-variable": "Je suis né en ${year}"
-  }
-}
